@@ -1,0 +1,53 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.dvigo.npmquick</id>
+    <name>npm quick</name>
+    <vendor email="david.vigo@example.com" url="https://github.com/dvigo">David Vigo</vendor>
+
+    <description><![CDATA[
+    <p><b>npm quick</b> is a lightweight and powerful plugin that allows you to discover and run <code>npm</code>, <code>pnpm</code>, and <code>yarn</code> scripts instantly from a searchable popup, without leaving your code.</p>
+
+    <h2>✨ Features</h2>
+    <ul>
+        <li><b>🚀 Instant Access:</b> Press <code>Cmd + Option + N</code> (macOS) or <code>Ctrl + Alt + N</code> (Windows/Linux) to open a searchable list of all scripts found in your <code>package.json</code>.</li>
+        <li><b>⚡️ Smart Detection:</b> Automatically detects <code>npm</code>, <code>pnpm</code>, or <code>yarn</code> based on your lock files.</li>
+        <li><b>📜 Execution History:</b> Keeps a history of executed scripts in a dedicated Tool Window.</li>
+        <li><b>👀 Interactive Console:</b> View logs and interact with running processes (supports input).</li>
+        <li><b>🛑 Process Control:</b> Stop running scripts directly from the toolbar.</li>
+        <li><b>🌍 Internationalization:</b> Available in English and Spanish.</li>
+    </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>1.0.0</h3>
+    <ul>
+        <li>🚀 Initial Release.</li>
+        <li>✨ Smart Discovery of npm/pnpm/yarn scripts.</li>
+        <li>⌨️ Quick Access via shortcut.</li>
+        <li>🖥 Interactive Console and Execution History.</li>
+        <li>🛑 Process Control (Stop, Clear, Remove).</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="npm quick" 
+                    anchor="bottom"
+                    secondary="false"
+                    factoryClass="com.dvigo.npmquick.ui.NpmQuickToolWindowFactory"
+                    icon="AllIcons.Actions.Execute"/>
+    </extensions>
+
+    <actions>
+        <action id="com.dvigo.npmquick.actions.RunScriptAction" 
+                class="com.dvigo.npmquick.actions.RunScriptAction" 
+                text="npm quick: Run Script" 
+                description="Run npm scripts from a searchable list">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt meta N"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="alt meta N"/>
+            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="alt meta N"/>
+        </action>
+    </actions>
+</idea-plugin>
