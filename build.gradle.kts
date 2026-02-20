@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.dvigo"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -31,7 +31,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("232")
-        untilBuild.set("242.*")
+        // untilBuild.set("242.*") // Removed to support future versions
     }
 
     signPlugin {
