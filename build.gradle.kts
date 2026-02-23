@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.dvigo"
-version = "1.0.3"
+version = "1.0.4"
 
 repositories {
     mavenCentral()
@@ -16,6 +16,8 @@ intellij {
     version.set("2023.2.5")
     type.set("IC") // Target IDE Platform
 
+    // com.intellij.modules.json is part of the platform in 2023.2, so we don't need to declare it here for compilation against 2023.2
+    // However, we need to declare it in plugin.xml for newer versions where it is extracted.
     plugins.set(listOf(/* Plugin Dependencies */))
 }
 
@@ -31,7 +33,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("232")
-        untilBuild.set("") // Empty string means no upper limit
+        untilBuild.set(provider { null }) // Explicitly set to null to remove upper limit
     }
 
     signPlugin {
