@@ -19,9 +19,9 @@
     ]]></description>
 
     <change-notes><![CDATA[
-    <h3>1.0.2</h3>
+    <h3>1.0.3</h3>
     <ul>
-        <li>🔧 Removed upper version limit to support all future IDE versions.</li>
+        <li>🔧 Fixed compatibility range to support all IDE versions from 2023.2 onwards.</li>
     </ul>
     <h3>1.0.1</h3>
     <ul>
