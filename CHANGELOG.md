@@ -12,16 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🔧 **Compatibility**: Full support for IntelliJ 2024.1+ and future versions.
 - 🐛 **Fixes**: Resolved binary incompatibility issues with JSON module.
 
-## [1.0.3] - 2024-05-22
-
-### Changed
-- 🔧 **Compatibility**: Fixed version range to support all IDE versions from 2023.2 onwards (232.0+).
-
-## [1.0.2] - 2024-05-22
-
-### Changed
-- 🔧 **Compatibility**: Removed upper version limit to support all future IDE versions (2024.x and beyond).
-
 ## [1.0.1] - 2024-05-22
 
 ### Changed
