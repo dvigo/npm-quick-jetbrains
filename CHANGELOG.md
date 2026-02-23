@@ -5,10 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.4] - 2024-05-22
+## [2.0.0] - 2024-05-22
 
-### Fixed
-- 🐛 **Compatibility**: Fixed binary incompatibility with IntelliJ 2024.1+ by explicitly declaring dependency on `com.intellij.modules.json` and removing upper version limit.
+### Changed
+- 🛠 **Major Update**: Migrated to IntelliJ Platform Gradle Plugin 2.0.
+- 🔧 **Compatibility**: Full support for IntelliJ 2024.1+ and future versions.
+- 🐛 **Fixes**: Resolved binary incompatibility issues with JSON module.
 
 ## [1.0.3] - 2024-05-22
 

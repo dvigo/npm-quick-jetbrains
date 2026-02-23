@@ -14,6 +14,9 @@ gradle/wrapper/gradle-wrapper.jar
 # Kotlin
 .kotlin/
 
+# IntelliJ Platform Gradle Plugin 2.0
+.intellijPlatform/
+
 # OS specific
 .DS_Store
 Thumbs.db

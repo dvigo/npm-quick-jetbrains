@@ -19,10 +19,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
-    <h3>1.0.4</h3>
+    <h3>2.0.0</h3>
     <ul>
-        <li>🐛 Fixed binary incompatibility with IntelliJ 2024.1+ by adding dependency on JSON module.</li>
-        <li>🔧 Removed upper version limit to support all future IDE versions.</li>
+        <li>🛠 Major update: Migrated to IntelliJ Platform Gradle Plugin 2.0.</li>
+        <li>🔧 Full compatibility with IntelliJ 2024.1+ and future versions.</li>
+        <li>🐛 Fixed binary incompatibility issues with JSON module.</li>
     </ul>
     <h3>1.0.3</h3>
     <ul>
