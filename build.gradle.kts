@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.dvigo"
-version = "2.0.0"
+version = "2.1.0"
 
 repositories {
     mavenCentral()
@@ -16,8 +16,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2024.1.4")
-        bundledPlugin("com.intellij.java")
+        intellijIdeaCommunity("2023.2.5")
         
         // Required for code instrumentation in Gradle Plugin 2.0
         instrumentationTools()

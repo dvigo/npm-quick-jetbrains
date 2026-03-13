@@ -10,6 +10,7 @@ import com.intellij.openapi.ui.popup.util.BaseListPopupStep
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.dvigo.npmquick.model.ScriptDefinition
+import com.dvigo.npmquick.NpmQuickBundle
 
 class RunScriptAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
@@ -17,11 +18,15 @@ class RunScriptAction : AnAction() {
         val scripts = ScriptService.findScripts(project)
 
         if (scripts.isEmpty()) {
-            Messages.showWarningDialog(project, "No scripts found in package.json or package.json not found.", "npm quick")
+            Messages.showWarningDialog(
+                project, 
+                NpmQuickBundle.message("warning.no.scripts.message"), 
+                NpmQuickBundle.message("warning.no.scripts.title")
+            )
             return
         }
 
-        val step = object : BaseListPopupStep<ScriptDefinition>("npm quick: Select Script", scripts) {
+        val step = object : BaseListPopupStep<ScriptDefinition>(NpmQuickBundle.message("popup.select.script.title"), scripts) {
             override fun getTextFor(value: ScriptDefinition): String {
                 return "${value.type.label}: ${value.name} (${value.command})"
             }
@@ -31,6 +36,11 @@ class RunScriptAction : AnAction() {
                     runScript(project, selectedValue)
                 }
                 return FINAL_CHOICE
+            }
+            
+            // Enable speed search by script name
+            override fun isSpeedSearchEnabled(): Boolean {
+                return true
             }
         }
 
